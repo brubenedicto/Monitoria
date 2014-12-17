@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Frequencias{
+	public static void main(String[] args){
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();  // quantidade de numeros que serao comparados
+		int m = scan.nextInt();  // todos os numeros possiveis
+		int v[] = new int[m+1];
+
+		int i,j;
+
+		for (i = 0; i < n; i++){
+			int a = scan.nextInt();
+
+			for (j = 0; j < m + 1; j++){
+				if (a == j){
+					v[j] += 1;
+				}
+			}
+		}
+
+		for (i = 0; i < m + 1; i++ ){
+			if (v[i] != 0){
+				System.out.println("[" + i + "]" +":" + v[i]);
+			}
+			else
+				System.out.println("[" + i + "]" +":" + "nenhuma");	
+		}
+	}
+}
